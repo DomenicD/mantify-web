@@ -1,23 +1,11 @@
-(function() {
-    'use strict';
-
-    angular
-        .module('blocks.exception')
-        .factory('exception', exception);
-
-    exception.$inject = ['logger'];
-
-    /* @ngInject */
-    function exception(logger) {
-        var service = {
-            catcher: catcher
-        };
-        return service;
-
-        function catcher(message) {
-            return function(reason) {
-                logger.error(message, reason);
-            };
+export default class ExceptionService {
+    static $inject = ['logger'];
+    
+    constructor(private _logger) {}
+    
+    catcher(message) {
+        return function(reason) {
+            this._logger.error(message, reason);
         }
     }
-})();
+}

@@ -1,5 +1,5 @@
-import ToastLogger from 'logger';
+import ToastrLogger from 'ToastrLogger';
 
 angular
 	.module('blocks.logger', [])
-	.service('lagger', ToastLogger);
+	.service('logger', ToastrLogger);

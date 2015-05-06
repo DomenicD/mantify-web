@@ -10,6 +10,15 @@
     },
     "jquery/jquery.d.ts": {
       "commit": "f3244190e20af6901e865f4cc58127d19216baa1"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "91876cf5b8d37929693a7457409961c22f6136e0"
+    },
+    "mocha/mocha.d.ts": {
+      "commit": "91876cf5b8d37929693a7457409961c22f6136e0"
+    },
+    "sinon/sinon.d.ts": {
+      "commit": "91876cf5b8d37929693a7457409961c22f6136e0"
     }
   }
 }
