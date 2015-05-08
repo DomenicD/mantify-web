@@ -19,6 +19,15 @@
     },
     "sinon/sinon.d.ts": {
       "commit": "91876cf5b8d37929693a7457409961c22f6136e0"
+    },
+    "angularjs/angular-mocks.d.ts": {
+      "commit": "f612f0eeb568eac3615713019bd60b406fdafd55"
+    },
+    "chai/chai.d.ts": {
+      "commit": "f612f0eeb568eac3615713019bd60b406fdafd55"
+    },
+    "gulp/gulp.d.ts": {
+      "commit": "6fb56c5277d6fda738080c11415c79513b64317e"
     }
   }
 }

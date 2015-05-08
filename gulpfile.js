@@ -1,10 +1,15 @@
+/// <reference path="typings/gulp/gulp.d.ts" />
+
 var args = require('yargs').argv;
 var browserSync = require('browser-sync');
 var config = require('./gulp.config')();
 var del = require('del');
+var fs = require('fs');
 var glob = require('glob');
 var gulp = require('gulp');
+// var merge = require('merge2');
 var path = require('path');
+var cp = require('child_process');
 var _ = require('lodash');
 var $ = require('gulp-load-plugins')({lazy: true});
 
@@ -28,6 +33,52 @@ var port = process.env.PORT || config.defaultPort;
  */
 gulp.task('help', $.taskListing);
 gulp.task('default', ['help']);
+
+/**
+ * Watch TypeScript and recompile and create refs
+ */
+gulp.task('ts-watcher', ['ts-watcher-client', 'ts-watcher-server']);
+
+gulp.task('ts-watcher-client', function() {
+    gulp.watch(config.ts.clientts, ['ts-compile-client']);
+});
+
+gulp.task('ts-watcher-server', function() {
+    gulp.watch(config.ts.serverts, ['ts-compile-server']);
+});
+
+/**
+ * Compiles *.js files, sourcemaps, 
+ * and optionally d.ts files (if passed --dts)
+ */
+gulp.task('ts-compile', ['ts-compile-client', 'ts-compile-server']);
+
+gulp.task('ts-compile-client', function(done) {    
+    runTSC('src/client', done);    
+});
+
+gulp.task('ts-compile-server', function(done) {
+    runTSC('src/server', done);
+});
+
+function runTSC(directory, done) {
+    var tscjs = path.join(process.cwd(), 'node_modules/typescript/bin/tsc.js');
+    var childProcess = cp.spawn(
+        'node', 
+        [tscjs, '-p', directory], 
+        { cwd: process.cwd() });
+    childProcess.stdout.on('data', function (data) {
+        // Ticino will read the output
+        console.log(data.toString());
+    });
+    childProcess.stderr.on('data', function (data) {
+        // Ticino will read the output
+        console.log(data.toString());
+    });
+    childProcess.on('close', function () {
+        done();
+    });
+}
 
 /**
  * vet the code and create coverage report
@@ -123,7 +174,7 @@ gulp.task('templatecache', ['clean-code'], function() {
  * Wire-up the bower dependencies
  * @return {Stream}
  */
-gulp.task('wiredep', function() {
+gulp.task('wiredep', ['ts-compile'], function() {
     log('Wiring the bower dependencies into the html');
 
     var wiredep = require('wiredep').stream;
@@ -306,7 +357,7 @@ gulp.task('clean-code', function(done) {
  *    gulp test --startServers
  * @return {Stream}
  */
-gulp.task('test', ['vet', 'templatecache'], function(done) {
+gulp.task('test', ['vet', 'ts-compile', 'templatecache'], function(done) {
     startTests(true /*singleRun*/ , done);
 });
 
