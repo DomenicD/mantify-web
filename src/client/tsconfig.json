@@ -2,7 +2,7 @@
     "compilerOptions": {
         "module": "commonjs",
         "noImplicitAny": false,
-        "outDir": "../../dest/client",
+        "outDir": "./.gen",
 		"preserveConstEnums": true,
         "removeComments": false,
         "rootDir": "./",
