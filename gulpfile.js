@@ -119,7 +119,7 @@ gulp.task('styles', ['clean-styles'], function() {
         .pipe($.less())
 //        .on('error', errorLogger) // more verbose and dupe output. requires emit.
         .pipe($.autoprefixer({browsers: ['last 2 version', '> 5%']}))
-        .pipe(gulp.dest(config.temp));
+        .pipe(gulp.dest(config.genfiles));
 });
 
 /**
@@ -167,7 +167,7 @@ gulp.task('templatecache', ['clean-code'], function() {
             config.templateCache.file,
             config.templateCache.options
         ))
-        .pipe(gulp.dest(config.temp));
+        .pipe(gulp.dest(config.genfiles));
 });
 
 /**
@@ -217,7 +217,7 @@ gulp.task('build-specs', ['templatecache'], function(done) {
     log('building the spec runner');
 
     var wiredep = require('wiredep').stream;
-    var templateCache = config.temp + config.templateCache.file;
+    var templateCache = config.genfiles + config.templateCache.file;
     var options = config.getWiredepDefaultOptions();
     var specs = config.specs;
 
@@ -250,7 +250,7 @@ gulp.task('build', ['optimize', 'images', 'fonts'], function() {
         subtitle: 'Deployed to the build folder',
         message: 'Running `gulp serve-build`'
     };
-    del(config.temp);
+    del(config.genfiles);
     log(msg);
     notify(msg);
 });
@@ -269,7 +269,7 @@ gulp.task('optimize', ['inject', 'test'], function() {
     var jsAppFilter = $.filter('**/' + config.optimized.app);
     var jslibFilter = $.filter('**/' + config.optimized.lib);
 
-    var templateCache = config.temp + config.templateCache.file;
+    var templateCache = config.genfiles + config.templateCache.file;
 
     return gulp
         .src(config.index)
@@ -305,7 +305,7 @@ gulp.task('optimize', ['inject', 'test'], function() {
  * @param  {Function} done - callback when complete
  */
 gulp.task('clean', function(done) {
-    var delconfig = [].concat(config.build, config.temp, config.report);
+    var delconfig = [].concat(config.build, config.genfiles, config.report);
     log('Cleaning: ' + $.util.colors.blue(delconfig));
     del(delconfig, done);
 });
@@ -332,7 +332,7 @@ gulp.task('clean-images', function(done) {
  */
 gulp.task('clean-styles', function(done) {
     var files = [].concat(
-        config.temp + '**/*.css',
+        config.genfiles + '**/*.css',
         config.build + 'styles/**/*.css'
     );
     clean(files, done);
@@ -344,7 +344,7 @@ gulp.task('clean-styles', function(done) {
  */
 gulp.task('clean-code', function(done) {
     var files = [].concat(
-        config.temp + '**/*.js',
+        config.genfiles + '**/*.js',
         config.build + 'js/**/*.js',
         config.build + '**/*.html'
     );
@@ -552,7 +552,7 @@ function startBrowserSync(isDev, specRunner) {
         files: isDev ? [
             config.client + '**/*.*',
             '!' + config.less,
-            config.temp + '**/*.css'
+            config.genfiles + '**/*.css'
         ] : [],
         ghostMode: { // these are the defaults t,f,t,t
             clicks: true,

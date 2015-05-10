@@ -2,10 +2,12 @@ module.exports = function() {
     var client = './src/client/';
     var server = './src/server/';
     var clientApp = client + 'app/';
+    var genfiles = client + '.gen/';
+    var codeGenfiles = genfiles + 'code/';
+    var clientAppGenfiles = codeGenfiles + 'app/';    
     var report = './report/';
     var root = './';
     var specRunnerFile = 'specs.html';
-    var temp = './.tmp/';
     var wiredep = require('wiredep');
     var bowerFiles = wiredep({devDependencies: true})['js'];
     var bower = {
@@ -55,22 +57,23 @@ module.exports = function() {
 
         // all javascript that we want to vet
         alljs: [
-            './src/test-helpers/*.js',
+            codeGenfiles + 'test-helpers/*.js',
             './*.js'
         ],
         build: './build/',
         client: client,
-        css: temp + 'styles.css',
+        css: genfiles + 'styles.css',
         fonts: bower.directory + 'font-awesome/fonts/**/*.*',
+        genfiles: genfiles,        
         html: client + '**/*.html',
         htmltemplates: clientApp + '**/*.html',
         images: client + 'images/**/*.*',
         index: client + 'index.html',
         // app js, with no specs
         js: [
-            clientApp + '**/*.module.js',
-            clientApp + '**/*.js',
-            '!' + clientApp + '**/*.spec.js'
+            clientAppGenfiles + '**/*.module.js',
+            clientAppGenfiles + '**/*.js',
+            '!' + clientAppGenfiles + '**/*.spec.js'
         ],
         jsOrder: [
             '**/app.module.js',
@@ -86,7 +89,7 @@ module.exports = function() {
             bower.directory + 'angular-mocks/angular-mocks.js',
             client + 'stubs/**/*.js'
         ],
-        temp: temp,
+        // temp: temp,
 
         /**
          * optimized files
@@ -99,7 +102,7 @@ module.exports = function() {
         /**
          * plato
          */
-        plato: {js: clientApp + '**/*.js'},
+        plato: {js: clientAppGenfiles + '**/*.js'},
 
         /**
          * browser sync
@@ -150,7 +153,7 @@ module.exports = function() {
             nodeModules + '/sinon-chai/lib/sinon-chai.js'
         ],
         specHelpers: [client + 'test-helpers/*.js'],
-        specs: [clientApp + '**/*.spec.js'],
+        specs: [clientAppGenfiles + '**/*.spec.js'],
         serverIntegrationSpecs: [client + '/tests/server-integration/**/*.spec.js'],
 
         /**
@@ -186,9 +189,9 @@ module.exports = function() {
             files: [].concat(
                 bowerFiles,
                 config.specHelpers,
-                clientApp + '**/*.module.js',
-                clientApp + '**/*.js',
-                temp + config.templateCache.file,
+                clientAppGenfiles + '**/*.module.js',
+                clientAppGenfiles + '**/*.js',
+                genfiles + config.templateCache.file,
                 config.serverIntegrationSpecs
             ),
             exclude: [],
@@ -203,7 +206,7 @@ module.exports = function() {
             },
             preprocessors: {}
         };
-        options.preprocessors[clientApp + '**/!(*.spec)+(.js)'] = ['coverage'];
+        options.preprocessors[clientAppGenfiles + '**/!(*.spec)+(.js)'] = ['coverage'];
         return options;
     }
 };
