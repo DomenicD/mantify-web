@@ -1,6 +1,7 @@
 
 #packages
 bower_components/
+build/
 node_modules/
-typings/
 src/client/.gen
+typings/
