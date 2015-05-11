@@ -1,9 +1,10 @@
-import ExceptionHandler from 'ExceptionHandler';
-import ExceptionHandlerProvider from 'ExceptionHandlerProvider'
+import ExceptionHandler from './ExceptionHandler';
+import ExceptionHandlerProvider from './ExceptionHandlerProvider'
 import ILogger from '../logger/ILogger'
 
 
-angular.module('blocks.exception', ['blocks.logger'])
+export var exceptionModule = angular
+    .module('blocks.exception', ['blocks.logger'])
     .service('exception', ExceptionHandler)
     .provider('exceptionHandler', ExceptionHandlerProvider)
     .config(config);
@@ -30,12 +31,12 @@ extendExceptionHandler.$inject = ['$delegate', 'exceptionHandler', 'logger'];
  * @return {Function} the decorated $exceptionHandler service
  */
 function extendExceptionHandler(
-    $delegate: angular.IExceptionHandlerService, 
-    exceptionHandler: ExceptionHandlerProvider, 
+    $delegate: angular.IExceptionHandlerService,
+    exceptionHandler: ExceptionHandlerProvider,
     logger: ILogger) {
     return function(exception, cause) {
         var appErrorPrefix = exceptionHandler.config.appErrorPrefix || '';
-        var errorData = {exception: exception, cause: cause};
+        var errorData = { exception: exception, cause: cause };
         exception.message = appErrorPrefix + exception.message;
         $delegate(exception, cause);
         /**

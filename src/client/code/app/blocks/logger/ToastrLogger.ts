@@ -1,6 +1,6 @@
 import ILogger from 'ILogger';
 
-export default class ToastrLogger implements ILogger {
+export class ToastrLogger implements ILogger {
     static $inject = ['$log', 'toastr'];
     
     constructor(private $log, private toastr) {}

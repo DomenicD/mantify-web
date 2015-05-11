@@ -1,36 +1,28 @@
-(function () {
-    'use strict';
+export default class DataService {
+    static $inject = ['$http', '$q', 'logger'];
+    constructor(
+        private $http, 
+        private $q, 
+        private logger) { }
 
-    angular
-        .module('app.core')
-        .factory('dataservice', dataservice);
-
-    dataservice.$inject = ['$http', '$q', 'logger'];
-    /* @ngInject */
-    function dataservice($http, $q, logger) {
-        var service = {
-            getPeople: getPeople,
-            getMessageCount: getMessageCount
-        };
-
-        return service;
-
-        function getMessageCount() { return $q.when(72); }
-
-        function getPeople() {
-            return $http.get('/api/people')
-                .then(success)
-                .catch(fail);
-
-            function success(response) {
-                return response.data;
-            }
-
-            function fail(error) {
-                var msg = 'query for people failed. ' + error.data.description;
-                logger.error(msg);
-                return $q.reject(msg);
-            }
-        }
+    public getMessageCount() { 
+        return this.$q.when(72); 
     }
-})();
+
+    public getPeople() {
+        return this.$http.get('/api/people')
+            .then(this.success.bind(this))
+            .catch(this.fail.bind(this));
+    }
+
+    private success(response) {
+        return response.data;
+    }
+
+    private fail(error) {
+        var msg = 'query for people failed. ' + error.data.description;
+        this.logger.error(msg);
+        return this.$q.reject(msg);
+    }
+
+}

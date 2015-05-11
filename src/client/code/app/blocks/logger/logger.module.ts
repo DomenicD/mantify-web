@@ -1,5 +1,5 @@
-import ToastrLogger from 'ToastrLogger';
+import ToastrLogger from './ToastrLogger';
 
-angular
+export var loggerModule = angular
 	.module('blocks.logger', [])
 	.service('logger', ToastrLogger);

@@ -1,8 +1,5 @@
-(function() {
-    'use strict';
-
-    angular.module('blocks.router', [
+export var routerModule = angular
+    .module('blocks.router', [
         'ui.router',
         'blocks.logger'
     ]);
-})();

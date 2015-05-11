@@ -1,5 +1,6 @@
 
 #packages
+.settings/
 bower_components/
 build/
 node_modules/
