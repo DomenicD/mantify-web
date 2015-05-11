@@ -1,5 +1,1 @@
-(function() {
-    'use strict';
-
-    angular.module('app.widgets', []);
-})();
+export var widgetsModule = angular.module('app.widgets', []);
