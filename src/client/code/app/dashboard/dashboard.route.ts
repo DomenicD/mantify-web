@@ -10,7 +10,7 @@ function getStates() {
             state: 'dashboard',
             config: {
                 url: '/',
-                templateUrl: 'app/dashboard/dashboard.html',
+                templateUrl: 'code/app/dashboard/dashboard.html',
                 controller: 'DashboardController',
                 controllerAs: 'vm',
                 title: 'dashboard',

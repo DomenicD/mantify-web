@@ -4,7 +4,7 @@ import {configRoutesFn} from './dashboard.route'
 import {widgetsModule} from '../widgets/widgets.module';
 
 
-angular.module('app.dashboard', [
+export var dashboardModule = angular.module('app.dashboard', [
         coreModule.name,
         widgetsModule.name
     ])

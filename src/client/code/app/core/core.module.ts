@@ -30,7 +30,7 @@ function getStates() {
             state: '404',
             config: {
                 url: '/404',
-                templateUrl: 'app/core/404.html',
+                templateUrl: 'code/app/core/404.html',
                 title: '404'
             }
         }

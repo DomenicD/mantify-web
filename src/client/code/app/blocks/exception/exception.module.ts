@@ -1,10 +1,10 @@
 import ExceptionHandler from './ExceptionHandler';
 import ExceptionHandlerProvider from './ExceptionHandlerProvider'
 import ILogger from '../logger/ILogger'
-
+import {loggerModule} from '../logger/logger.module';
 
 export var exceptionModule = angular
-    .module('blocks.exception', ['blocks.logger'])
+    .module('blocks.exception', [loggerModule.name])
     .service('exception', ExceptionHandler)
     .provider('exceptionHandler', ExceptionHandlerProvider)
     .config(config);
@@ -19,7 +19,7 @@ config.$inject = ['$provide'];
  * @ngInject
  */
 function config($provide: angular.auto.IProvideService) {
-    $provide.decorator('$exceptionHandler', extendExceptionHandler);
+    //$provide.decorator('$exceptionHandler', extendExceptionHandler);
 }
 
 extendExceptionHandler.$inject = ['$delegate', 'exceptionHandler', 'logger'];

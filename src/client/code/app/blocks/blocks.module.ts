@@ -1,6 +1,6 @@
-import { exceptionModule } from 'exception/exception.module';
-import { loggerModule } from 'logger/logger.module';
-import { routerModule } from 'router/router.module';
+import { exceptionModule } from './exception/exception.module';
+import { loggerModule } from './logger/logger.module';
+import { routerModule } from './router/router.module';
 
 export var blocksModule = angular
     .module('blocks',
