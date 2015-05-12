@@ -186,7 +186,7 @@ gulp.task('wiredep', ['ts-compile'], function() {
     return gulp
         .src(config.index)
         .pipe(wiredep(options))
-        .pipe(inject(js, '', config.jsOrder))
+        //.pipe(inject(js, '', config.jsOrder))
         .pipe(gulp.dest(config.client));
 });
 
@@ -486,7 +486,7 @@ function serve(isDev, specRunner) {
     }
 
     return $.nodemon(nodeOptions)
-        .on('restart', ['vet'], function(ev) {
+        .on('restart', ['ts-compile-client'], function(ev) {
             log('*** nodemon restarted');
             log('files changed:\n' + ev);
             setTimeout(function() {

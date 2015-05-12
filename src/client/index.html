@@ -15,9 +15,9 @@
         <base href="/">
         <!-- build:css styles/lib.css -->
         <!-- bower:css -->
-        <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
         <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
+        <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
+        <link rel="stylesheet" href="/bower_components/mdi/css/materialdesignicons.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css styles/app.css-->
@@ -28,49 +28,54 @@
     </head>
     
     <body>
-        <div>
-            <div ng-include="'code/app/layout/shell.html'"></div>
-            <div id="splash-page" ng-show="showSplash">
-                <div class="page-splash">
-                    <div class="page-splash-message">orangePortal</div>
-                    <div class="progress progress-striped active page-progress-bar">
-                        <div class="bar"></div>
+        <div layout="column" tabindex="-1" role="main" flex aria-hidden="false">
+            <md-content>
+                <md-toolbar>
+                    <div class="md-toolbar-tools">
+                        <md-button class="md-icon-button" aria-label="Settings">
+                            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                        </md-button>
+                        <h2>
+                            <span>Toolbar with Icon Buttons</span>
+                        </h2>
+                        <span flex></span>
+                        <md-button class="md-icon-button" aria-label="Favorite">
+                            <md-icon md-font-icon="mdi mdi-dots-vertical"></md-icon>
+                        </md-button>
+                        <md-button class="md-icon-button" aria-label="More">
+                            <md-icon md-font-icon="mdi mdi-dots-vertical"></md-icon>
+                        </md-button>
                     </div>
-                </div>
-            </div>
+                </md-toolbar>
+            </md-content>
         </div>
         <!-- build:js js/lib.js -->
         <!-- bower:js -->
         <script src="/bower_components/jquery/dist/jquery.js"></script>
         <script src="/bower_components/angular/angular.js"></script>
         <script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
-        <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="/bower_components/extras.angular.plus/ngplus-overlay.js"></script>
         <script src="/bower_components/moment/moment.js"></script>
         <script src="/bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="/bower_components/toastr/toastr.js"></script>
         <script src="/bower_components/angular-animate/angular-animate.js"></script>
         <script src="/bower_components/system.js/dist/system.js"></script>
+        <script src="/bower_components/angular-aria/angular-aria.js"></script>
+        <script src="/bower_components/angular-material/angular-material.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:js js/app.js-->
-        <!-- inject:js -->        
+        <!-- inject:js -->
         <!-- endinject -->
         <!-- inject:templates:js -->
         <!-- endinject -->
         <!-- endbuild -->
         <script>
             System.config({
-    
-                // set all requires to "lib" for library code
-                baseURL: './src/client/.gen/code/app/',
-            
-                // set "app" as an exception for our application code
-                //paths: {
-                //  'app/*': '/app/*.js'
-                //}
+                // serve dev code from .gen directory
+                baseURL: './src/client/.gen/code/app/',           
               });
-        System.import('app.module');
+            System.import('app.module');
         </script>
     </body>
 
