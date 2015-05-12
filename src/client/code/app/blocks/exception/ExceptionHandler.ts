@@ -1,3 +1,4 @@
+/// <reference path="../../../../../../typings/tsd.d.ts" />
 import ILogger from '../logger/ILogger'
 
 export default class ExceptionService {

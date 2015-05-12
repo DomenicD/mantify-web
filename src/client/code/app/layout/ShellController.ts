@@ -1,4 +1,4 @@
-
+/// <reference path="../../../../../typings/tsd.d.ts" />
 export class ShellController {
     static $inject = ['$rootScope', '$timeout', 'config', 'logger'];
     

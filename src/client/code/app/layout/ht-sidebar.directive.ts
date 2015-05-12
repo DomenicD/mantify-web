@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 /* @ngInject */
 export function htSidebar() {
     // Opens and closes the sidebar menu.

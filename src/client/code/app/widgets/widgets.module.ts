@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 import {htImgPerson} from './ht-img-person.directive';
 import {htWidgetHeader} from './ht-widget-header.directive';
 

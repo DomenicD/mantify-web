@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 import {coreModule} from '../core/core.module';
 import DashboardController from './DashboardController';
 import {configRoutesFn} from './dashboard.route'

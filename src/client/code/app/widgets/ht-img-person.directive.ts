@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 htImgPerson.$inject = ['config'];
 /* @ngInject */
 export function htImgPerson(config) {

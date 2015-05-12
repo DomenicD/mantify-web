@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 /* jshint -W117, -W030 */
 describe('DashboardController', function() {
     var controller;

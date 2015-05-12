@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 /* jshint -W117, -W030 */
 /* jshint multistr:true */
 describe('htSidebar directive: ', function () {

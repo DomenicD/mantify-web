@@ -1,3 +1,4 @@
+/// <reference path="../../../../../../typings/tsd.d.ts" />
 import ILogger from './ILogger';
 
 export default class ToastrLogger implements ILogger {

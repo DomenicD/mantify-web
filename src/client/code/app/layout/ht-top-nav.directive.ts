@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 /* @ngInject */
 export function htTopNav() {
     var directive = {

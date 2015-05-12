@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 toastrConfigFn.$inject = ['toastr'];
 /* @ngInject */
 export function toastrConfigFn(toastr) {

@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 import {coreModule} from '../core/core.module'
 import {htSidebar} from './ht-sidebar.directive'
 import {htTopNav} from './ht-top-nav.directive'
@@ -10,3 +11,4 @@ export var layoutModule = angular
     .directive('htTopNav', htTopNav)
     .controller('ShellController', ShellController)
     .controller('SidebarController', SidebarController);
+    

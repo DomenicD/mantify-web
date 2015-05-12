@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 import { blocksModule } from '../blocks/blocks.module';
 import {config, coreConfigFn, toastrConfigFn} from './config';
 import DataService from './DataService';

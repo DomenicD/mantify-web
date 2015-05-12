@@ -1,3 +1,4 @@
+/// <reference path="../../../../typings/tsd.d.ts" />
 /* jshint -W079 */
 var mockData = (function() {
     return {

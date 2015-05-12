@@ -1,3 +1,4 @@
+/// <reference path="../../../../typings/tsd.d.ts" />
 /*
  *  Phantom.js does not support Function.prototype.bind (at least not before v.2.0
  *  That's just crazy. Everybody supports bind.

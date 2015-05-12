@@ -1,3 +1,4 @@
+/// <reference path="../../../../../../typings/tsd.d.ts" />
 import ExceptionHandler from './ExceptionHandler';
 import ExceptionHandlerProvider from './ExceptionHandlerProvider'
 import ILogger from '../logger/ILogger'

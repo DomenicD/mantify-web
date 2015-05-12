@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 export default class DataService {
     static $inject = ['$http', '$q', 'logger'];
     constructor(

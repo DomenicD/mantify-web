@@ -1,3 +1,4 @@
+/// <reference path="../../../../typings/tsd.d.ts" />
 import { adminModule } from './admin/admin.module';
 import { coreModule } from './core/core.module';
 import { dashboardModule } from './dashboard/dashboard.module';
@@ -13,4 +14,3 @@ angular.module('app', [
 ]);
 
 angular.bootstrap(document, ['app']);
-

@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 export default class AdminController {
     static $inject = ['logger'];
     public title : string;

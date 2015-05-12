@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 import AdminController from './AdminController';
 import {coreModule} from '../core/core.module';
 import {widgetsModule} from '../widgets/widgets.module';

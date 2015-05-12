@@ -1,3 +1,4 @@
+/// <reference path="../../../../../../typings/tsd.d.ts" />
 /* Help configure the state-base ui.router */
 export default class RouterHelperProvider {
     static $inject = ['$locationProvider', '$stateProvider', '$urlRouterProvider'];

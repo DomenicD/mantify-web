@@ -1,3 +1,4 @@
+/// <reference path="../../../../../../typings/tsd.d.ts" />
 export interface ILogger {
     error(message: string, data?: any, title?: string);
     info(message: string, data?: any, title?: string);

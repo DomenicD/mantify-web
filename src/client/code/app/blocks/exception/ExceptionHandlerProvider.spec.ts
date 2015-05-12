@@ -1,3 +1,4 @@
+/// <reference path="../../../../../../typings/tsd.d.ts" />
 declare var bard;
 
 /* jshint -W117, -W030 */

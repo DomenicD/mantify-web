@@ -6,28 +6,28 @@
   "bundle": "typings/tsd.d.ts",
   "installed": {
     "angularjs/angular.d.ts": {
-      "commit": "f3244190e20af6901e865f4cc58127d19216baa1"
+      "commit": "846a250e0a6f5e6adf6347ee4ca442a9d1abd8fc"
     },
     "jquery/jquery.d.ts": {
-      "commit": "f3244190e20af6901e865f4cc58127d19216baa1"
+      "commit": "846a250e0a6f5e6adf6347ee4ca442a9d1abd8fc"
     },
     "lodash/lodash.d.ts": {
-      "commit": "91876cf5b8d37929693a7457409961c22f6136e0"
+      "commit": "846a250e0a6f5e6adf6347ee4ca442a9d1abd8fc"
     },
     "mocha/mocha.d.ts": {
-      "commit": "91876cf5b8d37929693a7457409961c22f6136e0"
+      "commit": "846a250e0a6f5e6adf6347ee4ca442a9d1abd8fc"
     },
     "sinon/sinon.d.ts": {
-      "commit": "91876cf5b8d37929693a7457409961c22f6136e0"
+      "commit": "846a250e0a6f5e6adf6347ee4ca442a9d1abd8fc"
     },
     "angularjs/angular-mocks.d.ts": {
-      "commit": "f612f0eeb568eac3615713019bd60b406fdafd55"
+      "commit": "846a250e0a6f5e6adf6347ee4ca442a9d1abd8fc"
     },
     "chai/chai.d.ts": {
-      "commit": "f612f0eeb568eac3615713019bd60b406fdafd55"
+      "commit": "846a250e0a6f5e6adf6347ee4ca442a9d1abd8fc"
     },
     "gulp/gulp.d.ts": {
-      "commit": "6fb56c5277d6fda738080c11415c79513b64317e"
+      "commit": "846a250e0a6f5e6adf6347ee4ca442a9d1abd8fc"
     }
   }
 }

@@ -1,3 +1,4 @@
+/// <reference path="../../../../../../typings/tsd.d.ts" />
 import {loggerModule} from '../logger/logger.module'
 import RouterHelperProvider from './RouterHelperProvider';
 

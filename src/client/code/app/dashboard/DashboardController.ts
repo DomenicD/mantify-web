@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 export default class DashboardController {
     static $inject = ['$q', 'dataservice', 'logger'];
     

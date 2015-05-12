@@ -1,3 +1,4 @@
+/// <reference path="../../../../../typings/tsd.d.ts" />
 configRoutesFn.$inject = ['routerHelper'];
 /* @ngInject */
 export function configRoutesFn(routerHelper) {
