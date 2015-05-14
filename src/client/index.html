@@ -18,6 +18,7 @@
         <link rel="stylesheet" href="/bower_components/toastr/toastr.css" />
         <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css" />
         <link rel="stylesheet" href="/bower_components/mdi/css/materialdesignicons.css" />
+        <link rel="stylesheet" href="/bower_components/mdi/css/materialdesignicons.min.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css styles/app.css-->
@@ -28,26 +29,22 @@
     </head>
     
     <body>
-        <div layout="column" tabindex="-1" role="main" flex aria-hidden="false">
-            <md-content>
-                <md-toolbar>
-                    <div class="md-toolbar-tools">
-                        <md-button class="md-icon-button" aria-label="Settings">
-                            <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
-                        </md-button>
-                        <h2>
-                            <span>Toolbar with Icon Buttons</span>
-                        </h2>
-                        <span flex></span>
-                        <md-button class="md-icon-button" aria-label="Favorite">
-                            <md-icon md-font-icon="mdi mdi-dots-vertical"></md-icon>
-                        </md-button>
-                        <md-button class="md-icon-button" aria-label="More">
-                            <md-icon md-font-icon="mdi mdi-dots-vertical"></md-icon>
-                        </md-button>
-                    </div>
-                </md-toolbar>
-            </md-content>
+        <!-- TODO: Sample http://taskey.herokuapp.com/#/ -->
+        <md-toolbar class="md-toolbar">
+            <div class="md-toolbar-tools">
+                <div class="md-menu">
+                    <span>Orange Portal</span>
+                </div>                            
+            </div>
+            <md-input-container class=""
+        </md-toolbar>
+        <div layout="column" style="padding-bottom: 15px;">
+            <md-toolbar>
+                <div class="md-toolbar-tools">
+                    <h2 class="md-flex">Orange Portal</h2>
+                </div>
+            </md-toolbar>
+            <md-content layout-padding style="height: 600px;padding: 24px;"></md-content>
         </div>
         <!-- build:js js/lib.js -->
         <!-- bower:js -->

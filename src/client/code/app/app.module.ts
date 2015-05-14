@@ -10,7 +10,7 @@ let thirdPartyModules = [
 ];
 
 let internalModules = [
-    adminModule.name,    
+    adminModule.name,
     coreModule.name,
     dashboardModule.name,
     layoutModule.name,
@@ -18,8 +18,16 @@ let internalModules = [
 ];
 
 angular.module('app', [].concat(
-    thirdPartyModules, 
+    thirdPartyModules,
     internalModules
-    ));
+    ))
+    .config(ngMaterialConfig);
 
 angular.bootstrap(document, ['app']);
+
+
+function ngMaterialConfig($mdThemingProvider: angular.material.MDThemingProvider) {
+    $mdThemingProvider.theme('default')
+        .primaryPalette('orange')
+        .accentPalette('blue');
+}
