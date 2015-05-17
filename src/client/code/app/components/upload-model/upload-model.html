@@ -1,1 +1,45 @@
-﻿<h1>Component: {{uploadModel.name}}</h1>
+﻿<md-card class="upload-model">
+    <div layout="row">
+        <div layout="column" flex>
+            <div class="model-preview" flex></div>
+            <md-button class="md-primary" 
+                       ngf-select 
+                       ngf-change="uploadModel.upload($files)">
+                Browse Files
+            </md-button>
+        </div>
+        <md-content layout-padding flex>
+            <form name="userForm">
+                <md-input-container>
+                    <label>Name</label>
+                    <input ng-model="uploadModel.model.name">
+                </md-input-container>
+                
+                <md-input-container>
+                    <label>Caption</label>
+                    <textarea ng-model="uploadModel.model.caption" md-maxlength="100"></textarea>
+                </md-input-container>
+               
+                <md-input-container>
+                    <label>Description</label>
+                    <textarea ng-model="uploadModel.model.description" columns="1" md-maxlength="500"></textarea>
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Price</label>
+                    <input ng-model="uploadModel.model.price">
+                </md-input-container>
+
+                <md-switch ng-model="uploadModel.model.physicalItem">
+                    Physical item available
+                </md-switch>
+
+                <md-input-container ng-show="uploadModel.model.physicalItem">
+                    <label>Link to buy physical item</label>
+                    <input ng-model="uploadModel.model.physicalItemOrderUrl">
+                </md-input-container>
+
+            </form>
+        </md-content>
+    </div>
+</md-card>

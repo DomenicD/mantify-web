@@ -1,14 +1,9 @@
 /// <reference path="../../../../typings/tsd.d.ts" />
-import { adminModule } from './admin/admin.module';
-import { coreModule } from './core/core.module';
-import { dashboardModule } from './dashboard/dashboard.module';
-import { layoutModule } from './layout/layout.module';
-import { widgetsModule } from './widgets/widgets.module';
-
 import { AppController } from './app';
 import { componentsModule } from './components/components.module';
 
 let thirdPartyModules = [
+    'ngFileUpload',
     'ngMaterial',
     'ngNewRouter'
 ];

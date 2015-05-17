@@ -1,7 +1,7 @@
 module.exports = function() {
     var client = './src/client/';
     var server = './src/server/';
-    var clientApp = client + 'app/';
+    var clientApp = client + 'code/app/';
     var genfiles = client + '.gen/';
     var codeGenfiles = genfiles + 'code/';
     var clientAppGenfiles = codeGenfiles + 'app/';    
@@ -78,10 +78,13 @@ module.exports = function() {
             '**/app.module.js',
             '**/*.module.js',
             '**/*.js'
-        ],
-        less: client + 'styles/styles.less',
+        ],        
         report: report,
         root: root,
+        sass: [
+            client + 'styles/**/*.scss',
+            clientApp + '**/*.scss'
+        ],
         server: server,
         source: 'src/',
         stubsjs: [
@@ -95,7 +98,8 @@ module.exports = function() {
          */
         optimized: {
             app: 'app.js',
-            lib: 'lib.js'
+            lib: 'lib.js',
+            styles: 'styles.css'
         },
 
         /**
