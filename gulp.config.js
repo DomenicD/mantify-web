@@ -31,7 +31,7 @@ module.exports = function() {
                 './*.ts'
             ],
             clientts: [
-                './src/client/**/*.ts'
+                './src/client/code/**/*.ts'
             ],
             serverts: [
                 './src/server/**/*.ts'
@@ -63,7 +63,6 @@ module.exports = function() {
         build: './build/',
         client: client,
         css: genfiles + 'styles.css',
-        fonts: bower.directory + 'font-awesome/fonts/**/*.*',
         genfiles: genfiles,        
         html: client + '**/*.html',
         htmltemplates: clientApp + '**/*.html',

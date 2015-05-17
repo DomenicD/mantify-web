@@ -28,6 +28,6 @@ angular.bootstrap(document, ['app']);
 
 function ngMaterialConfig($mdThemingProvider: angular.material.MDThemingProvider) {
     $mdThemingProvider.theme('default')
-        .primaryPalette('orange')
-        .accentPalette('blue');
+        .primaryPalette('green')
+        .accentPalette('blue');    
 }
