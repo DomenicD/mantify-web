@@ -1,18 +1,30 @@
 ﻿<md-card class="upload-model" flex>
-    <div layout-gt-md="row" layout="column">
+    <div layout-gt-md="row" layout="column"
+         layout-padding>
         <div layout="column" flex>
-            <div class="model-preview" flex></div>
-            <md-button class="md-primary" 
-                       ngf-select 
-                       ngf-change="uploadModel.upload($files)">
+            <div class="model-preview" flex
+                 layout layout-align="center center"
+                 ngf-drop ngf-change="uploadModel.upload($files)">
+                <!-- Content is set using CSS; please see upload-model.scss file -->
+                <span ng-show="uploadModel.showDragDropText" 
+                      class="drag-drop-text"></span>
+            </div>            
+            <md-button class="md-primary"
+                        ngf-select
+                        ngf-change="uploadModel.upload($files)">
                 Browse Files
-            </md-button>
+            </md-button>                        
         </div>
         <md-content class="details-form" layout-padding flex-gt-md="40">
             <form name="userForm">
                 <md-input-container>
-                    <label>Name</label>
-                    <input ng-model="uploadModel.model.name">
+                    <label>File Name</label>
+                    <input readonly ng-model="uploadModel.fileName">
+                </md-input-container>
+
+                <md-input-container>
+                    <label>Display Name</label>
+                    <input ng-model="uploadModel.model.displayName">
                 </md-input-container>
                 
                 <md-input-container>

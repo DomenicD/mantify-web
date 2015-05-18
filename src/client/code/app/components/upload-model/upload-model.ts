@@ -2,12 +2,19 @@
 
 export class UploadModelController {
     static $inject = ['Upload'];
+
+    public fileName: string;
+
     constructor(private _uploadSvc) {
+    }
+
+    get showDragDropText(): boolean {
+        return this.fileName ? false : true;
     }
 
     public upload(file: File[]) {
         if (file && file.length > 0) {
-            console.log(file[0].name);
+            this.fileName = file[0].name;
         }
     }
 }
