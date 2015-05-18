@@ -23,8 +23,8 @@ angular.bootstrap(document.body, ['app']);
 
 function ngMaterialConfig($mdThemingProvider: angular.material.MDThemingProvider) {
     $mdThemingProvider.theme('default')
-        .primaryPalette('green')
-        .accentPalette('blue');    
+        .primaryPalette('indigo')
+        .accentPalette('purple');    
 }
 
 function newRouterConfig($componentLoaderProvider) {

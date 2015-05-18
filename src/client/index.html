@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
     
     <head>
@@ -30,15 +30,19 @@
     
     <body ng-controller="AppController as main">
         <!-- TODO: Sample http://taskey.herokuapp.com/#/ -->
-        <div layout="column" style="padding-bottom: 15px;">
+        <div layout="column">
             <md-toolbar>
-                <div class="md-toolbar-tools">
-                    <h2 class="md-flex">Mantify</h2>
+                <div layout="row" layout-padding>
+                    <h3>Mantify</h3>
+                    <div layout="row" layout-align="start center">
+                        <md-button class="md-icon-button">
+                            <md-icon md-font-icon="mdi mdi-upload">Upload</md-icon>
+                        </md-button>                        
+                    </div>
                 </div>
             </md-toolbar>
-            <md-content layout-padding style="height: 600px;padding: 24px;">
-                <div ng-viewport></div>
-            </md-content>
+            <div ng-viewport layout="row" layout-padding
+                 layout-align="center start"></div>
         </div>
         
                         
